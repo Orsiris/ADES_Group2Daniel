@@ -1,0 +1,55 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    display: flex;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-top: 1vh;
+    background-color: transparent;
+    justify-content: space-evenly;
+}
+
+* h1, h2, h3, p {
+    font-family: 'Old Standard TT', serif;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.nav-item > h1 {
+    margin: 0;
+}
+
+.nav-item {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    justify-content: end;
+}
+
+.horizontal-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+.horizontal-list a {
+    text-decoration: none;
+    color: #000000;
+    /* Adjust link color as needed */
+}
+
+.last-list {
+    list-style: none;
+    padding: 0;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}

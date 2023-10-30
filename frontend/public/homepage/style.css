@@ -1,3 +1,10 @@
+
+body{
+    margin: 0;
+}
+
+
+
 .navbar {
     position: relative;
     top: 0;
@@ -72,4 +79,25 @@
     width: 100%;
     height: 100vh;
     object-fit: cover;
+}
+
+/* Apply CSS to make images fit the slide */
+.glide__slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+header {
+    position: absolute; /* Use "fixed" for a fixed position or "absolute" for an absolute position */
+    width: 100%; /* Make the header span the entire width */
+   
+    z-index: 1; /* Place header above the carousel */
+}
+
+/* Style the Glide.js carousel to be full-screen */
+.glide {
+    position: relative;
+    top: 0; /* Reset the top position to zero */
+    height: 100vh; /* 100% of the viewport height */
 }

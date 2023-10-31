@@ -2,8 +2,6 @@ body {
     margin: 0;
 }
 
-
-
 .navbar {
     position: relative;
     top: 0;
@@ -15,7 +13,7 @@ body {
     justify-content: space-evenly;
 }
 
-* h1, h2, h3, p {
+* h1, h2, h3, p,li {
     font-family: 'Old Standard TT', serif;
     margin: 0;
     font-weight: bolder;
@@ -186,6 +184,10 @@ header {
     overflow: hidden;
 }
 
+header {
+    position: absolute; /* Use "fixed" for a fixed position or "absolute" for an absolute position */
+    width: 100%; /* Make the header span the entire width */
+    z-index: 1; /* Place header above the carousel */
 .allProdImg:hover {
     filter: brightness(0.1);
     transform: scale(1.4);
@@ -205,6 +207,42 @@ header {
 .text>h1 {
     font-size: 5rem;
 }
+
+.marquee {
+    --gap: 1rem;
+    text-transform: uppercase;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
+    list-style-type: none;
+  }
+  
+  .marquee__content {
+    text-transform: uppercase;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+    gap: var(--gap);
+    animation: scroll 20s linear infinite;
+    list-style-type: none;
+    color: #ED7D31;
+  }
+
+  .marquee__content li ion-icon {
+    color: #929292 !important;
+}
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
 
 .shopBtn {
     position: absolute;

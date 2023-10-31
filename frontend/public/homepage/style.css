@@ -1,5 +1,4 @@
-
-body{
+body {
     margin: 0;
 }
 
@@ -22,7 +21,7 @@ body{
     font-weight: bolder;
 }
 
-.nav-item > h1 {
+.nav-item>h1 {
     margin: 0;
 }
 
@@ -47,9 +46,38 @@ body{
 }
 
 .horizontal-list a {
+    display: block;
+    color: black;
     text-decoration: none;
-    color: #000000;
-    /* Adjust link color as needed */
+    text-align: left;/
+}
+
+.horizontal-list a>p {
+    display: inline-block;
+    position: relative;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+.horizontal-list a>p::after {
+    overflow: hidden;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.horizontal-list a>p:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .last-list {
@@ -61,43 +89,128 @@ body{
     margin: 0;
 }
 
-.carousel {
-    position: relative;
-    top: 0;
-    z-index: -1;
-}
-
-#myCarousel {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.carousel-image {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
 
 /* Apply CSS to make images fit the slide */
-.glide__slide img {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
-
 header {
-    position: absolute; /* Use "fixed" for a fixed position or "absolute" for an absolute position */
-    width: 100%; /* Make the header span the entire width */
-   
-    z-index: 1; /* Place header above the carousel */
+    position: absolute;
+    /* Use "fixed" for a fixed position or "absolute" for an absolute position */
+    width: 100%;
+    /* Make the header span the entire width */
+
+    z-index: 1;
+    /* Place header above the carousel */
 }
 
 /* Style the Glide.js carousel to be full-screen */
 .glide {
     position: relative;
-    top: 0; /* Reset the top position to zero */
-    height: 100vh; /* 100% of the viewport height */
+    top: 0;
+    /* Reset the top position to zero */
+    height: 100vh;
+    /* 100% of the viewport height */
+}
+
+#slide1 {
+    background-image: url(../img/couchGreen.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+}
+
+#slide2 {
+    background-image: url(../img/allProduct.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+}
+
+#slide3 {
+    background-image: url(../img/dining.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+}
+
+#slide4 {
+    background-image: url(../img/bedroom.jpg);
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+}
+
+.desc {
+    width: 45%;
+    padding-top: 20vh;
+    padding-left: 5vw;
+}
+
+.catLinks {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.catLinks>a {
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 40vh;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.allProd:hover>img {
+    filter: brightness(0.5);
+    transform: scale(1.1);
+}
+
+.allProdImg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.9);
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+.allProdImg:hover {
+    filter: brightness(0.1);
+    transform: scale(1.4);
+}
+
+.text {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40vh;
+    color: white;
+}
+
+.text>h1 {
+    font-size: 5rem;
+}
+
+.shopBtn {
+    position: absolute;
+    bottom: 2vh;
+    text-align: center;
+    width: 100%;
+    color: white;
+    text-decoration: underline;
 }

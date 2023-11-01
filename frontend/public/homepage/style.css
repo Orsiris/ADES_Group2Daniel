@@ -8,19 +8,25 @@ body {
     display: flex;
     margin-right: 5vw;
     margin-left: 5vw;
-    margin-top: 1vh;
+    height: 8vh;
     background-color: transparent;
     justify-content: space-evenly;
+    align-items: center;
 }
 
-* h1, h2, h3, p,li {
+* h1, h2, p, li {
     font-family: 'Old Standard TT', serif;
     margin: 0;
     font-weight: bolder;
 }
 
+* h3 {
+    font-family: 'Montserrat';
+}
+
 .nav-item>h1 {
     margin: 0;
+    color: rgb(0, 0, 0);
 }
 
 .nav-item {
@@ -45,7 +51,7 @@ body {
 
 .horizontal-list a {
     display: block;
-    color: black;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     text-align: left;/
 }
@@ -53,7 +59,7 @@ body {
 .horizontal-list a>p {
     display: inline-block;
     position: relative;
-    color: black;
+    color: rgb(0, 0, 0);
     font-size: 16px;
     font-weight: 500;
     overflow: hidden;
@@ -68,7 +74,7 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -102,18 +108,22 @@ header {
 /* Style the Glide.js carousel to be full-screen */
 .glide {
     position: relative;
-    top: 0;
+    top: 8vh;
     /* Reset the top position to zero */
-    height: 100vh;
+    height: 92vh;
+    overflow: hidden;
     /* 100% of the viewport height */
+    cursor: default;
 }
+
 
 #slide1 {
     background-image: url(../img/couchGreen.jpg);
     background-size: cover;
     background-position: center center;
     width: 100%;
-    height: 100vh;
+    height: 92vh;
+    cursor: default;
 }
 
 #slide2 {
@@ -121,7 +131,8 @@ header {
     background-size: cover;
     background-position: center center;
     width: 100%;
-    height: 100vh;
+    height: 92vh;
+    cursor: default;
 }
 
 #slide3 {
@@ -129,7 +140,8 @@ header {
     background-size: cover;
     background-position: center center;
     width: 100%;
-    height: 100vh;
+    height: 92vh;
+    cursor: default;
 }
 
 #slide4 {
@@ -137,31 +149,34 @@ header {
     background-size: cover;
     background-position: center center;
     width: 100%;
-    height: 100vh;
+    height: 92vh;
+    cursor: default;
 }
 
 .desc {
     width: 45%;
     padding-top: 20vh;
     padding-left: 5vw;
+    color: white;
 }
 
 .catLinks {
     display: flex;
-    width: 80%;
-    justify-content: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    width: 60%;
+    justify-content: space-between;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    flex-wrap: wrap;
 }
 
-.catLinks>a {
+.allProd {
     position: relative;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 2%;
+    margin-bottom: 4%;
     width: 100%;
     height: 40vh;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     overflow: hidden;
 }
@@ -185,13 +200,14 @@ header {
 }
 
 header {
-    position: absolute; /* Use "fixed" for a fixed position or "absolute" for an absolute position */
-    width: 100%; /* Make the header span the entire width */
-    z-index: 1; /* Place header above the carousel */
-.allProdImg:hover {
-    filter: brightness(0.1);
-    transform: scale(1.4);
+    position: absolute;
+    /* Use "fixed" for a fixed position or "absolute" for an absolute position */
+    width: 100%;
+    /* Make the header span the entire width */
+    z-index: 1;
 }
+
+/* Place header above the carousel */
 
 .text {
     display: flex;
@@ -200,7 +216,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 40vh;
+    height: 100%;
     color: white;
 }
 
@@ -209,6 +225,7 @@ header {
 }
 
 .marquee {
+    margin-top: 5%;
     --gap: 1rem;
     text-transform: uppercase;
     display: flex;
@@ -216,32 +233,33 @@ header {
     user-select: none;
     gap: var(--gap);
     list-style-type: none;
-  }
-  
-  .marquee__content {
+}
+
+.marquee__content {
     text-transform: uppercase;
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
     min-width: 100%;
     gap: var(--gap);
-    animation: scroll 20s linear infinite;
+    animation: scroll 30s linear infinite;
     list-style-type: none;
     color: #ED7D31;
-  }
+}
 
-  .marquee__content li ion-icon {
+.marquee__content li ion-icon {
     color: #929292 !important;
 }
 
-  @keyframes scroll {
+@keyframes scroll {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     to {
-      transform: translateX(calc(-100% - var(--gap)));
+        transform: translateX(calc(-100% - var(--gap)));
     }
-  }
+}
 
 
 .shopBtn {
@@ -251,4 +269,98 @@ header {
     width: 100%;
     color: white;
     text-decoration: underline;
+}
+
+.topLeft {
+    width: 43%;
+    position: relative;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    height: 50vh;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.topLeftImg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.9);
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+.topLeft:hover>img {
+    filter: brightness(0.5);
+    transform: scale(1.1);
+}
+
+.topRight {
+    width: 47%;
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 4%;
+    height: 60vh;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.topRightImg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.9);
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+}
+
+.topRight:hover>img {
+    filter: brightness(0.5);
+    transform: scale(1.1);
+}
+
+.bottomRight {
+    width: 52%;
+    position: relative;
+    margin-top: 5%;
+    margin-bottom: 4%;
+    height: 60vh;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.bottomRight:hover > img {
+    filter: brightness(0.5);
+    transform: scale(1.1);
+}
+
+.bottomLeft {
+    width: 41%;
+    position: relative;
+    margin-top: -10%;
+    margin-bottom: 4%;
+    height: 70vh;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+}
+
+.bottomLeft:hover > img {
+    filter: brightness(0.5);
+    transform: scale(1.1);
 }

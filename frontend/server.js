@@ -26,7 +26,7 @@ app.use(serveStatic(__dirname+"/public"));
 
 // brings user to login.html when typing localhost:3001
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/public/login.html');
+    res.sendFile(__dirname + '/public/homepage/index.html');
   });
 
 app.listen(port,hostname,function(){

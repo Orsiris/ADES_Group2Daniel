@@ -118,7 +118,7 @@ header {
 
 
 #slide1 {
-    background-image: url(../img/couchGreen.jpg);
+   
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -127,7 +127,7 @@ header {
 }
 
 #slide2 {
-    background-image: url(../img/allProduct.jpg);
+   
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -136,7 +136,6 @@ header {
 }
 
 #slide3 {
-    background-image: url(../img/dining.jpg);
     background-size: cover;
     background-position: center center;
     width: 100%;
@@ -145,7 +144,7 @@ header {
 }
 
 #slide4 {
-    background-image: url(../img/bedroom.jpg);
+   
     background-size: cover;
     background-position: center center;
     width: 100%;

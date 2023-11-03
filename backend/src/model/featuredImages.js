@@ -2,24 +2,15 @@ const { Pool } = require('pg');
 const postgres = require('postgres');
 require('dotenv').config();
 
-let { PGHOST, PGDATABASE, PGUSER, PGPASSWORD, ENDPOINT_ID } = process.env;
-
-const sql = postgres({
-  host: PGHOST,
-  database: PGDATABASE,
-  username: PGUSER,
-  password: PGPASSWORD,
-  port: 5432,
-  ssl: 'require',
-  connection: {
-    options: `project=${ENDPOINT_ID}`,
-  },
-});
+const sql = require('../config/database.js')
 
 const featuredImagesDB = {
   getAllFeaturedImages: async function () {
     try {
-      const result = await sql`SELECT * FROM public.featured`;
+      const result = await sql`SELECT p.imageurl, p.name, p.description
+      FROM homesteadhaven.products p
+      INNER JOIN homesteadhaven.featured f ON p.productid = f.productid
+      `;
       return result;
     } catch (err) {
       console.error(err);

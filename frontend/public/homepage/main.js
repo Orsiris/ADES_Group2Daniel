@@ -31,25 +31,30 @@ async function fetchDataFromAPI() {
   }
 
   async function preloadImages(imageUrls) {
-    return Promise.all(
-      imageUrls.map((imageUrl) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = imageUrl;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      })
-    );
-  }
-  
+  return Promise.all(
+    imageUrls.map((imageUrl) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = imageUrl;
+        img.onload = () => {
+          console.log('Image loaded:', imageUrl);
+          resolve();
+        };
+        img.onerror = (error) => {
+          console.error('Error loading image:', imageUrl, error);
+          reject();
+        };
+      });
+    })
+  );
+}
   
   // Function to update slide content and styles based on fetched data
   async function updateSlideContent() {
     const data = await fetchDataFromAPI();
     if (!data) return;
   
-    await preloadImages(data.map((item) => item.image_url));
+    await preloadImages(data.map((item) => item.imageurl));
   
     // Destroy the existing Glide.js instance
     if (glide) {
@@ -63,10 +68,10 @@ async function fetchDataFromAPI() {
       const descElement = slide.querySelector('.prodDesc');
   
       // Set the background image
-      slide.style.backgroundImage = `url(${data[i].image_url})`;
+      slide.style.backgroundImage = `url(${data[i].imageurl})`;
   
       // Set the title and description
-      titleElement.textContent = data[i].title;
+      titleElement.textContent = data[i].name;
       descElement.textContent = data[i].description;
     }
   

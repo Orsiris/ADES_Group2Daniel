@@ -96,7 +96,7 @@ body {
 
 /* Apply CSS to make images fit the slide */
 header {
-    position: absolute;
+   
     /* Use "fixed" for a fixed position or "absolute" for an absolute position */
     width: 100%;
     /* Make the header span the entire width */
@@ -198,13 +198,7 @@ header {
     overflow: hidden;
 }
 
-header {
-    position: absolute;
-    /* Use "fixed" for a fixed position or "absolute" for an absolute position */
-    width: 100%;
-    /* Make the header span the entire width */
-    z-index: 1;
-}
+
 
 /* Place header above the carousel */
 
@@ -362,4 +356,35 @@ header {
 .bottomLeft:hover > img {
     filter: brightness(0.5);
     transform: scale(1.1);
+}
+
+
+/* PRODUCTS PAGE STYLING */
+
+.productHero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 0 2rem
+}
+
+.categorySlogan, .categoryImage{
+    width: 50%;
+}
+
+.categorySlogan{
+    padding:1.6rem
+}
+
+.categorySlogan > h1{
+text-align: center;
+font-size: 5rem;
+}
+
+#categoryImage{
+    width: 40rem;
+    height: auto;
+    object-fit: contain;
 }

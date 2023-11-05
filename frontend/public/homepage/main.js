@@ -22,7 +22,7 @@ const backendUrl = 'http://localhost:8081';
 async function fetchDataFromAPI() {
     try {
       const response = await axios.get(backendUrl + '/getFeaturedImages');
-      console.log(response.data)
+      
       return response.data; // Assuming the data format includes image URL, title, and description
     } catch (error) {
       console.error('Error fetching data from the API:', error);

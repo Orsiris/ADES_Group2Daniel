@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const featuredImage = require('../model/featuredImages.js');
+const products = require('../model/products.js');
 const cors = require('cors');
 
 const app = express();
@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const postgres = require('postgres');
+
 require('dotenv').config();
 
 
@@ -26,13 +26,38 @@ require('dotenv').config();
 
 app.get('/getFeaturedImages', async (req, res) => {
   try {
-    const result = await featuredImage.getAllFeaturedImages();
-    console.log(result);
+    const result = await products.getAllFeaturedProducts();
+    
     res.send(result);
   } catch (err) {
     console.error(err);
     res.status(500).send({ error: 'Internal server error' });
   }
 });
+
+app.get('/getAllProducts', async (req, res) => {
+  try{
+    const result = await products.getAllProducts();
+   
+    res.send(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ error: 'Internal server error' });
+  }
+});
+
+app.get('/getProductsByCategory/:categoryId', async (req, res) => {
+
+  try{
+    const result = await products.getProductsByCategory(req.params.categoryId);
+    
+    res.send(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ error: 'Internal server error' });
+  }
+});
+
+
 
 module.exports = app;

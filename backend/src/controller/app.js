@@ -46,10 +46,10 @@ app.get('/getAllProducts', async (req, res) => {
   }
 });
 
-app.get('/getProductsByCategory/:categoryId', async (req, res) => {
+app.get('/getProductsByCategory/:category', async (req, res) => {
 
   try{
-    const result = await products.getProductsByCategory(req.params.categoryId);
+    const result = await products.getProductsByCategory(req.params.category);
     
     res.send(result);
   } catch (err) {

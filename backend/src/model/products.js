@@ -26,12 +26,10 @@ const productsDB = {
         }
     },
 
-    getProductsByCategory: async function (categoryId) {
+    getProductsByCategory: async function (category) {
         try {
             const result = await sql`
-              SELECT name, description, price, category, stockquantity, imageurl 
-              FROM homesteadhaven.products
-              WHERE category = ${categoryId}
+              SELECT p.* FROM homesteadhaven.products p INNER JOIN homesteadhaven.Category c ON p.category = c.category_id WHERE c.category_name = ${category}
             `;
             return result;
           } catch (err) {

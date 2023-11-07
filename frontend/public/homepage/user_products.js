@@ -5,10 +5,11 @@ const categoryTitleElement = document.getElementById("categoryTitle");
 const categoryDescriptionElement = document.getElementById(
   "categoryDescription"
 );
+const categoryImageElement = document.getElementById("categoryImage");
 
 categoryTitleElement.textContent = categoryContent.title;
 categoryDescriptionElement.textContent = categoryContent.description;
-
+categoryImageElement.src = categoryContent.image;
 //WILL CHANGE LATER
 function getCategoryContent(category) {
   // You can define content for each category here
@@ -16,16 +17,42 @@ function getCategoryContent(category) {
     case "Living Room":
       return {
         title: "Living Room",
+        image: "../img/living.jpg",
         description:
           "Step into the heart of your home, the living room, where comfort and style come together to create a haven for relaxation and gatherings. Our carefully curated collection of living room furniture brings you the best in comfort, aesthetics, and functionality.  Your living room is not just a space its a canvas for self-expression and a stage for the moments that matter most. Explore our collection today and transform your living room into a sanctuary of comfort, sophistication, and functionality.",
       };
     case "Bedroom":
       return {
         title: "Bedroom",
+        image: "../img/bedroom.jpg",
         description:
-          "Explore our collection of bedroom furniture for a cozy and restful retreat...",
+          "Vivamus dignissim pharetra pulvinar. Mauris porttitor sapien id erat mollis convallis. Pellentesque ac efficitur nisl, tristique commodo lacus. Nam tempus tempus neque in venenatis. Vivamus vitae consequat nibh. Nulla dui lectus, efficitur sed ex nec, feugiat euismod quam. Nulla ac fringilla tortor. Nullam quis erat id diam lacinia blandit. Quisque ut elit vehicula, molestie nunc id, molestie risus.",
       };
-    // Add cases for other categories
+
+      case "Outdoor":
+      return {
+        title: "Outdoor",
+        image: "../img/outdoor.jpg",
+        description:
+          "Vivamus dignissim pharetra pulvinar. Mauris porttitor sapien id erat mollis convallis. Pellentesque ac efficitur nisl, tristique commodo lacus. Nam tempus tempus neque in venenatis. Vivamus vitae consequat nibh. Nulla dui lectus, efficitur sed ex nec, feugiat euismod quam. Nulla ac fringilla tortor. Nullam quis erat id diam lacinia blandit. Quisque ut elit vehicula, molestie nunc id, molestie risus.",
+      };
+
+      case "Dining Room":
+      return {
+        title: "Dining Room",
+        image: "../img/dining.jpg",
+        description:
+          "Vivamus dignissim pharetra pulvinar. Mauris porttitor sapien id erat mollis convallis. Pellentesque ac efficitur nisl, tristique commodo lacus. Nam tempus tempus neque in venenatis. Vivamus vitae consequat nibh. Nulla dui lectus, efficitur sed ex nec, feugiat euismod quam. Nulla ac fringilla tortor. Nullam quis erat id diam lacinia blandit. Quisque ut elit vehicula, molestie nunc id, molestie risus.",
+      };
+
+      case "All Collections":
+        return {
+          title: "All Collections",
+          image: "../img/allProduct.jpg",
+          description:
+            "Vivamus dignissim pharetra pulvinar. Mauris porttitor sapien id erat mollis convallis. Pellentesque ac efficitur nisl, tristique commodo lacus. Nam tempus tempus neque in venenatis. Vivamus vitae consequat nibh. Nulla dui lectus, efficitur sed ex nec, feugiat euismod quam. Nulla ac fringilla tortor. Nullam quis erat id diam lacinia blandit. Quisque ut elit vehicula, molestie nunc id, molestie risus.",
+        };
+   
     default:
       return {
         title: "Default Title",
@@ -35,7 +62,7 @@ function getCategoryContent(category) {
 }
 
 // Retrieve product data from sessionStorage
-const productData = JSON.parse(sessionStorage.getItem("productsByCategory"));
+const productData = JSON.parse(sessionStorage.getItem("productsSelected"));
 
 // Get a reference to the grid container
 const gridContainer = document.querySelector(".grid-container");

@@ -95,13 +95,20 @@ categoryLinks.forEach((link) => {
     const category = this.getAttribute("data-category");
 
     try {
-      const response = await axios.get(
-        backendUrl + `/getProductsByCategory/${category}`
-      );
+      let response;
+
+      if (category === "All Collections") {
+        // Call a different endpoint to get all products
+        response = await axios.get(backendUrl + '/getAllProducts');
+      } else {
+        // Call the regular endpoint based on the selected category
+        response = await axios.get(backendUrl + `/getProductsByCategory/${category}`);
+      }
+
       const data = response.data;
 
       // Store the data in sessionStorage
-      sessionStorage.setItem("productsByCategory", JSON.stringify(data));
+      sessionStorage.setItem("productsSelected", JSON.stringify(data));
 
       // Redirect to the products page or do something else with the data
 

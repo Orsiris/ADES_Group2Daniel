@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Include the Glide.js JavaScript file -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
@@ -68,27 +69,27 @@
             <ul class="glide__slides">
                 <li class="glide__slide" id="slide1">
                     <div class="desc">
-                        <h1 class="titleOfProduct">Maple Sage Green Couch</h1>
-                        <h3 class="prodDesc">4-person couch in sage green. Maple Wood legs and frame</h3>
+                        <h1 class="titleOfProduct"></h1>
+                        <h3 class="prodDesc"></h3>
                     </div>
                 </li>
                 <li class="glide__slide" id="slide2">
                     <div class="desc">
-                        <h1 class="titleOfProduct">Maple Sage Green Couch</h1>
-                        <h3 class="prodDesc">4-person couch in sage green. Maple Wood legs and frame</h3>
+                        <h1 class="titleOfProduct" id="title"></h1>
+                        <h3 class="prodDesc"></h3>
                     </div>
                 </li>
                 <li class="glide__slide" id="slide3">
                     <div class="desc">
-                        <h1 class="titleOfProduct">Maple Sage Green Couch</h1>
-                        <h3 class="prodDesc">4-person couch in sage green. Maple Wood legs and frame</h3>
+                        <h1 class="titleOfProduct"></h1>
+                        <h3 class="prodDesc"></h3>
                     </div>
                 </li>
 
                 <li class="glide__slide" id="slide4">
                     <div class="desc">
-                        <h1 class="titleOfProduct">Maple Sage Green Couch</h1>
-                        <h3 class="prodDesc">4-person couch in sage green. Maple Wood legs and frame</h3>
+                        <h1 class="titleOfProduct"></h1>
+                        <h3 class="prodDesc"></h3>
                     </div>
                 </li>
 
@@ -132,10 +133,10 @@
         </ul>
     </div>
 
-    <script type="module" src="main.js"></script>
+    
     <section class="catLinks">
 
-        <a href="#" class="allProd">
+        <a href="products.html?category=AllCollections" class="allProd">
 
             <img src="../img/allProduct.jpg" class="allProdImg">
             <div class="text">
@@ -147,7 +148,7 @@
             </div>
         </a>
 
-        <a href="#" class="topLeft">
+        <a href="products.html?category=Bedroom" class="topLeft category-link" data-category="Bedroom">
             <img src="../img/bedroom.jpg" class="topLeftImg">
             <div class="text">
                 <p>Bedroom Essentials</p>
@@ -158,7 +159,7 @@
             </div>
         </a>
 
-        <a href="#" class="topRight">
+        <a href="products.html?category=DiningRoom" class="topRight category-link" data-category="Dining Room">
             <img src="../img/dining.jpg" class="topRightImg">
             <div class="text">
                 <p>Spice up your Dining Room</p>
@@ -168,8 +169,8 @@
                 <h3>Shop Now</h3>
             </div>
         </a>
-
-        <a href="#" class="bottomLeft">
+ 
+        <a href="products.html?category=Outdoors" class="bottomLeft category-link" data-category="Outdoor">
             <img src="../img/outdoor.jpg" class="topRightImg">
             <div class="text">
                 <p>Embrace Nature</p>
@@ -180,7 +181,7 @@
             </div>
         </a>
 
-        <a href="#" class="bottomRight">
+        <a href="products.html?category=LivingRoom" class="bottomRight category-link" data-category="Living Room">
             <img src="../img/living.jpg" class="topRightImg">
             <div class="text">
                 <p>Relax and Unwind</p>
@@ -194,6 +195,7 @@
 
     </section>
 
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>

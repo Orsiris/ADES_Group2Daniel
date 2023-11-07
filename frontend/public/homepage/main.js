@@ -104,9 +104,8 @@ categoryLinks.forEach((link) => {
       sessionStorage.setItem("productsByCategory", JSON.stringify(data));
 
       // Redirect to the products page or do something else with the data
-      // window.location.href = '/products.html'; // Redirect to products page, for example
-      // Construct the URL for the products page with the selected category as a query parameter
-      const productsPageUrl = `/frontend/public/homepage/products.html?category=${category}`;
+
+      const productsPageUrl = `products.html?category=${category}`;
 
       // Redirect to the products page
       window.location.href = productsPageUrl;

@@ -108,7 +108,6 @@ header {
 /* Style the Glide.js carousel to be full-screen */
 .glide {
     position: relative;
-    top: 8vh;
     /* Reset the top position to zero */
     height: 92vh;
     overflow: hidden;
@@ -218,7 +217,7 @@ header {
 }
 
 .marquee {
-    margin-top: 5%;
+    margin-top: 2%;
     --gap: 1rem;
     text-transform: uppercase;
     display: flex;

@@ -45,6 +45,12 @@ const gridContainer = document.querySelector('.grid-container');
 if (productData && Array.isArray(productData)) {
   // Iterate through the product data
   productData.forEach(product => {
+    // Create a new anchor element (a) to make each grid-item a link
+    const productLink = document.createElement('a');
+    productLink.classList.add('grid-item-link'); // Add a class for styling if needed
+    // Set the href attribute with the product ID as a query parameter
+    productLink.href = `/frontend/public/homepage/product_details.html?productID=${product.productid}`;
+
     // Create a new grid item (div element)
     const gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
@@ -75,10 +81,12 @@ if (productData && Array.isArray(productData)) {
     // Append the image, title, and price to the grid item
     gridItem.appendChild(imageContainer);
     gridItem.appendChild(descriptionContainer);
-   
 
-    // Append the grid item to the grid container
-    gridContainer.appendChild(gridItem);
+    // Append the grid item to the anchor element
+    productLink.appendChild(gridItem);
+
+    // Append the anchor element to the grid container
+    gridContainer.appendChild(productLink);
   });
 } else {
   // Handle the case where there is no product data

@@ -1,0 +1,13 @@
+.productListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+

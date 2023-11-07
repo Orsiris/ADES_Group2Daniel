@@ -1,5 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
-const category = urlParams.get('category');
+const category = urlParams.get("category");
 const categoryContent = getCategoryContent(category);
 const categoryTitleElement = document.getElementById("categoryTitle");
 const categoryDescriptionElement = document.getElementById(
@@ -34,43 +34,42 @@ function getCategoryContent(category) {
   }
 }
 
-
 // Retrieve product data from sessionStorage
-const productData = JSON.parse(sessionStorage.getItem('productsByCategory'));
+const productData = JSON.parse(sessionStorage.getItem("productsByCategory"));
 
 // Get a reference to the grid container
-const gridContainer = document.querySelector('.grid-container');
+const gridContainer = document.querySelector(".grid-container");
 
 // Check if the product data exists
 if (productData && Array.isArray(productData)) {
   // Iterate through the product data
-  productData.forEach(product => {
+  productData.forEach((product) => {
     // Create a new anchor element (a) to make each grid-item a link
-    const productLink = document.createElement('a');
-    productLink.classList.add('grid-item-link'); // Add a class for styling if needed
-    // Set the href attribute with the product ID as a query parameter
-    productLink.href = `/frontend/public/homepage/product_details.html?productID=${product.productid}`;
+    const productLink = document.createElement("a");
+    productLink.classList.add("grid-item-link"); // Add a class for styling if needed
+    // Construct the URL for the product details page with the selected productID as a query parameter
+    productLink.href = `product_details.html?productID=${product.productid}`;
 
     // Create a new grid item (div element)
-    const gridItem = document.createElement('div');
-    gridItem.classList.add('grid-item');
+    const gridItem = document.createElement("div");
+    gridItem.classList.add("grid-item");
 
-    const imageContainer = document.createElement('div');
-    imageContainer.classList.add('grid-image'); // Use the new image container class
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("grid-image"); // Use the new image container class
 
     // Create and configure an image element
-    const img = document.createElement('img');
+    const img = document.createElement("img");
     img.src = product.imageurl;
 
-    const descriptionContainer = document.createElement('div');
-    descriptionContainer.classList.add('grid-description'); // Use the new description container class
+    const descriptionContainer = document.createElement("div");
+    descriptionContainer.classList.add("grid-description"); // Use the new description container class
 
     // Create and configure an h2 element for the title
-    const title = document.createElement('h2');
+    const title = document.createElement("h2");
     title.textContent = product.name;
 
     // Create and configure an h3 element for the price
-    const price = document.createElement('h3');
+    const price = document.createElement("h3");
     price.textContent = `From $${product.price} SGD`;
 
     imageContainer.appendChild(img);
@@ -90,5 +89,5 @@ if (productData && Array.isArray(productData)) {
   });
 } else {
   // Handle the case where there is no product data
-  console.log('No product data available.');
+  console.log("No product data available.");
 }

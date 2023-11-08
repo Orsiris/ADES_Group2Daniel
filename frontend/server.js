@@ -2,7 +2,7 @@ const express=require('express');
 const serveStatic=require('serve-static');
 
 var hostname="localhost";
-var port=3001;
+var port=3000;
 
 var app=express();
 
@@ -21,7 +21,7 @@ app.use(function(req,res,next){
     }
 });
 
-
+app.use(express.static("public"))
 app.use(serveStatic(__dirname+"/public"));
 
 // brings user to login.html when typing localhost:3001

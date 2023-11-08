@@ -27,17 +27,27 @@ const pool = new Pool({
 });
 
 // Function to fetch image URL from Cloudinary
-async function getCloudinaryImageUrlsInFolder(folderPath) {
+async function getOptimizedCloudinaryImageUrlsInFolder(folderPath, width = 1000, quality = 'auto') {
   try {
     const result = await cloudinary.api.resources({
       type: 'upload',
       prefix: folderPath
     });
 
-    const imageUrls = result.resources.map(resource => resource.url);
+    const imageUrls = result.resources.map(resource => {
+      // Construct a URL with the desired quality and width transformation
+      const optimizedUrl = cloudinary.url(resource.public_id, {
+        quality,
+        width,
+        crop: 'fill', // You can adjust the crop mode as needed
+      });
+
+      return optimizedUrl;
+    });
+
     return imageUrls;
   } catch (error) {
-    console.error('Error fetching image URLs from Cloudinary:', error);
+    console.error('Error fetching optimized image URLs from Cloudinary:', error);
     throw error;
   }
 }
@@ -45,18 +55,18 @@ async function getCloudinaryImageUrlsInFolder(folderPath) {
 // Function to populate the "products" table with dummy data
 async function populateProductsTable() {
   try {
-    const folderPath = 'Bedroom/';
-    const imageUrls = await getCloudinaryImageUrlsInFolder(folderPath);
+    const folderPath = 'Outdoor/';
+    const imageUrls = await getOptimizedCloudinaryImageUrlsInFolder(folderPath);
 
     const client = await pool.connect();
     await client.query('BEGIN');
 
     for (let i = 1; i <= imageUrls.length; i++) {
-      const name = 'Lorem Ipsum Product ' + i + 2;
+      const name = 'Lorem Ipsum Outdoor' + i ;
       const description = 'Lorem ipsum dolor sit amet.';
       const price = 10.00;
-      const category = 3; // Replace with the actual category value.
-      const stockQuantity = 10;
+      const category = 4; // Replace with the actual category value.
+      const stockQuantity = 16;
       const imageUrl = imageUrls[i - 1]; // Index adjusted to start from 0.
       const creationDate = new Date().toISOString();
 
